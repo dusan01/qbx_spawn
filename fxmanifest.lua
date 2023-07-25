@@ -1,28 +1,27 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'QB-Spawn'
-version '1.0.0'
+version '1.1.1'
+repository 'https://github.com/Qbox-project/qbx-spawn'
 
 shared_scripts {
 	'config.lua',
 	'@ox_lib/init.lua',
-	'@qbx-apartments/config.lua'
+	'@qbx-core/import.lua'
 }
 
-client_script 'client.lua'
+modules {
+	'qbx-core:core'
+}
+
+client_scripts {
+	'client/*.lua'
+}
+
 server_scripts {
 	'@oxmysql/lib/MySQL.lua',
 	'server.lua'
 }
 
-ui_page 'html/index.html'
-
-files {
-	'html/index.html',
-	'html/style.css',
-	'html/vue.js',
-	'html/reset.css'
-}
-
 lua54 'yes'
+use_experimental_fxv2_oal 'yes'
